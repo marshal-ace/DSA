@@ -1,7 +1,7 @@
 # 🪐 Beyond The Event Horizon — DSA with Python
 
 > *"We must reach far beyond our own lifetimes."*
-> — Professor Brand, Interstellar
+> - Professor Brand, Interstellar
 
 ---
 
