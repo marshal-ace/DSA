@@ -16,4 +16,26 @@ class Node:
     def __init__(self,val):
         self.val=val
         self.next=None
-class node
+
+def create_linked_list(arr):
+    if arr is None:
+        return None
+    head=Node(arr[0])
+    current=head
+    for val in arr[1:]:
+        current.next=Node(val)
+        current=current.next
+    return head
+head=create_linked_list([4,5,9,1])
+node=head.next
+
+def delete(node):
+    node.val=node.next.val
+    node.next=node.next.next
+delete(node)
+current=head
+
+while current is not None:
+    print(current.val,end=" ")
+    # print(current.next)
+    current=current.next
