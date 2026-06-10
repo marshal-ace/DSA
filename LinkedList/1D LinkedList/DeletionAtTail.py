@@ -1,4 +1,4 @@
-#To Delete the node at the end
+#To Delete the node at the end 
 class Node:
     def __init__(self,val):
         self.val=val
