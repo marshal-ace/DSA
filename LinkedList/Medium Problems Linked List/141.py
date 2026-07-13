@@ -49,7 +49,7 @@ def check_loop(head):
             else:
                 # if current.next==None:
                 #     return False
-                hashy[current]=current.next 
+                hashy[current]=current.val
                 current=current.next   
         return False
 print(check_loop(head))     
@@ -58,7 +58,7 @@ print(check_loop(head))
 #Basically One is a slow pointer and other is a fast pointer slow pointer moves
 # one node at a time and the fast pointer moves two at a time eventually the slow and fast catches up to the slow pointer 
 # when the fast == slow it means there is a loop this is the optimized way like O(1) for the Space
-
+#TC-O(N), SC-O(1)
 def check_optimize(head):
     if head is None:
         return None
