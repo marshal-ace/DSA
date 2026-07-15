@@ -32,7 +32,7 @@ def create_linked_list(arr, pos):
     return head
 
 
-head = create_linked_list([10,20,30,40,50,60], -2)
+head = create_linked_list([10,20,30,40,50,60], 2)
 def check_loop(head):
     if head is None:
         return False
