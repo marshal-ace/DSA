@@ -40,10 +40,52 @@ def sort_ll(head):
             current=current.next
         return head
 
-head=create_linked_list([1,5,7,23,11])
-head=sort_ll(head)
+# head=create_linked_list([1,5,7,23,11])
+# head=sort_ll(head)
 
-current=head
-while current:
-    print(current.val)
-    current=current.next
+# current=head
+# while current:
+#     print(current.val)
+#     current=current.next
+
+
+# Optimal
+#Using Merge sort
+
+def findMiddle(head):
+    slow=head
+    fast=head.next
+    while fast and fast.next:
+        slow=slow.next
+        fast=fast.next.next
+    return slow
+
+def merge(list1,list2):
+    dummyNode=Node(-1)
+    temp=dummyNode
+
+    while list1 and list2:
+        if list1.data<list2.data:
+            temp.next=list1
+            list1=list1.next
+        else:
+            temp.next=list2
+            list2=list2.next
+        temp=temp.next
+    if list1:
+        temp.next=list1
+    else:
+        temp.next=list2
+    return dummyNode.next
+
+def sort_ll(head):
+    if not head or not head.next:
+        return head
+    middle=findMiddle(head)
+    right=middle.next
+    middle.next=None
+    left=head
+
+    left=sort_ll(left)
+    right=sort_ll(right)
+    return merge(left,right)
